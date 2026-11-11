@@ -2,14 +2,14 @@ import connectDB from "@/lib/db";
 import Order from "@/models/Order";
 import { jwtVerify } from "jose";
 import { cookies } from "next/headers";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Notification from "@/models/Notification";
 
 const secret = new TextEncoder().encode(
     process.env.JWT_SECRET
 );
 
-export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
     try {
         const cookiesStore = await cookies();
         const token = cookiesStore.get("token")?.value;

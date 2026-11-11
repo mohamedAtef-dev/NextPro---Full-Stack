@@ -1,5 +1,7 @@
 # 🚀 NextPro - Full-Stack E-Commerce & Admin Dashboard
 
+> **🌐 Live Demo:** [https://next-pro-full-stack.vercel.app](https://next-pro-full-stack.vercel.app)
+
 NextPro is a modern, fast, and secure full-stack web application built with **Next.js (App Router)** and **MongoDB**. It features a responsive e-commerce storefront, user authentication, cart management, and a powerful **Admin Dashboard** with role-based access control (RBAC).
 
 ---
@@ -31,8 +33,8 @@ To run this project locally on your machine, follow these steps:
 
 ### 1. Clone the repository
 \`\`\`bash
-git clone https://github.com/YOUR_USERNAME/nextpro-dashboard.git
-cd nextpro-dashboard
+git clone https://github.com/mohamedAtef-dev/NextPro---Full-Stack.git
+cd NextPro---Full-Stack
 \`\`\`
 
 ### 2. Install dependencies
