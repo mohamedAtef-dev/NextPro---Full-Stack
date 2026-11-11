@@ -40,7 +40,7 @@ export async function GET() {
 
         return NextResponse.json(
             {message: "Server Error"},
-            {status: 500}
+            {status: 500, headers: { 'Cache-Control': 'no-store' }}
         );
     }
 }

@@ -37,7 +37,11 @@ export async function GET() {
         .populate("items.product")
         .sort({createdAt: -1});
 
-        return NextResponse.json(orders);
+        return NextResponse.json(orders, { 
+            status: 200, 
+            headers: { 'Cache-Control': 'no-store' } 
+        });
+
     } catch (err) {
         console.log(err);
 

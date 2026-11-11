@@ -34,7 +34,10 @@ export async function GET() {
     } catch(err) {
         console.log('AUTH ME ERROR:', err);
 
-        return NextResponse.json({user: null});
+        return NextResponse.json({user: null}, { 
+            status: 200, 
+            headers: { 'Cache-Control': 'no-store' } 
+        });
 
     }
 }

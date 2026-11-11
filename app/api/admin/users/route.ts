@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
         // Retrieve all users from the database, excluding the password.
         const users = await User.find({}).select("-password").sort({ createdAt: -1 });
 
-        return NextResponse.json(users, { status: 200 });
+        return NextResponse.json(users, { status: 200, headers: { 'Cache-Control': 'no-store' } });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ message: "خطأ في السيرفر" }, { status: 500 });

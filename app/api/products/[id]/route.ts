@@ -8,13 +8,7 @@ const secret = new TextEncoder().encode(
     process.env.JWT_SECRET
 );
 
-
-interface RouteParams {
-    params: {
-        id: string;
-    }
-}
-export async function PUT(req: NextRequest, {params}: RouteParams) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
     try {
         const cookiesStore = await cookies();
         const token = cookiesStore.get("token")?.value;
@@ -59,7 +53,7 @@ export async function PUT(req: NextRequest, {params}: RouteParams) {
     }
 }
 
-export async function DELETE(req: NextRequest, {params}: RouteParams) {
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
     try {
         const cookiesStore = await cookies();
         const token = cookiesStore.get("token")?.value;
